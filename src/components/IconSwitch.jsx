@@ -1,6 +1,6 @@
 const IconSwitch = (icon, onSwitch) => {
     return (
-        <button onClick={onSwitch} className="display-mode">
+        <button onClick={onSwitch} className={icon}>
             {icon === 'view_module' ? (
                 <i className="material-icons">view_module</i>
                 ) : (
