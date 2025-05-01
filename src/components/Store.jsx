@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import IconSwitch from './IconSwitch';
+import CardsView from './CardsView';
+import ListView from './ListView';
 
 const Store = ({products}) => {
     const [products, setProducts] = useState([
