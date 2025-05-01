@@ -3,8 +3,8 @@ import IconSwitch from './IconSwitch';
 import CardsView from './CardsView';
 import ListView from './ListView';
 
-const Store = ({products}) => {
-    const [products, setProducts] = useState([
+const Store = () => {
+    const [products] = useState([
         {
             name: "Nike Metcon 2",
             price: "130",
@@ -48,4 +48,20 @@ const Store = ({products}) => {
     const toggleDisplayMode = () => {
         setDisplayMode(prevMode => (prevMode === 'view_module' ? 'view_list' : 'view_module'));
     };
-}
+
+    return (
+        <div className='store'>
+            <IconSwitch 
+                icon={displayMode} 
+                onSwitch={toggleDisplayMode} 
+            />
+            {displayMode === 'view_module' ? (
+                <CardsView cards={products} />
+            ) : (
+                <ListView items={products} />
+            )}
+        </div>
+    );
+};
+
+export default Store;
